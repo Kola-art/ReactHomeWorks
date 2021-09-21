@@ -1,0 +1,14 @@
+.userCard {
+    margin: 5px;
+    border: 1px solid black;
+    background-color: aqua;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+}
+.userList {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
