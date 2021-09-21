@@ -23,14 +23,13 @@ function UserCreator({createNewUser, users}) {
       tryBalance.splice(-6, 0, ',');
     }
     tryBalance = tryBalance.join('');
-    
+
     createNewUser({
       ...newUser,
       balance: '$' + tryBalance,
       picture: 'http://placehold.it/32x32',
       _id: users.length + 1
     });
-
     setNewUser({
       ...newUser, 
       name: '',
