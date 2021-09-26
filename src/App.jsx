@@ -1,34 +1,16 @@
-import React, { useState, useMemo } from 'react';
-import { userData } from './Components/UserData/userData';
-import SearchInput from './Components/Search/SearchInput';
-import UserCreator from './Components/UserCreator/CreateUser';
+import React, {useState} from 'react';
+import HeaderForms from './Components/UserForm/HeaderForms';
 import DrawUserList from './Components/UserCard/UserList';
 import './App.css';
 
 function App() {
-
-  const [users, setUser] = useState(userData);
-  const createNewUser = (newUser) => {
-    setUser([...users, newUser]);
-  };
-
-  const [filter, setFilter] = useState('');
-  const searchFilter = (event) => {
-    setFilter(event.target.value);
-  };
-
-  const filteredUsers = useMemo(()=>{
-    return users.filter( user => user.name.toLowerCase().includes(filter.toLowerCase()));
-  },[filter, users]);
-
-  
-
+  const [sortedUsers, setSortedUsers] = useState('');
+ 
   return (
-    <div>
-      <SearchInput searchFilter={searchFilter} />
+    <div className='wrapper'>
+      <HeaderForms sortedUsers = {setSortedUsers} />
       <div className='App'>
-        <UserCreator createNewUser={createNewUser} users={users} />
-        <DrawUserList users={filteredUsers} createNewUser={createNewUser} />
+        <DrawUserList users={sortedUsers} />
       </div>
     </div>
   );

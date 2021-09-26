@@ -1,0 +1,25 @@
+.modal {
+    display: none;
+    position: fixed;    
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(109, 106, 106, 0.5)
+}
+.detail {
+    display: flex;
+    flex-direction: column;
+    position: fixed;    
+    top: 10px;
+    right: 50%;
+    padding: 10px;
+    transform: translateX(50%);
+    max-width: 600px;
+    border: 3px solid rgb(255, 230, 0);
+    align-items: center;
+    background-color: rgb(241, 188, 13);
+}
+.active {
+    display: block;
+}

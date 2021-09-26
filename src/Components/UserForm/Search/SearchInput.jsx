@@ -5,9 +5,7 @@ import styles from './SearchStyles.module.css';
 function SearchInput({searchFilter}){
 
   return (
-    <header className={styles.headerSearch}>
-      <input type='text' placeholder='Search by name' onChange={searchFilter}/>
-    </header>
+    <input className={styles.headerSearchinput}  type='text' placeholder='Search by name' onChange={searchFilter}/>
   );
 }
 

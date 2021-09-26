@@ -1,13 +1,9 @@
 .headerSearch {
     width: 100%;
+    padding: 0, 100px;
     height: 50px;
     background-color: aquamarine;
     display: flex;
-    justify-content: center; 
+    justify-content: space-around; 
     align-items: center;
-}
-.headerSearch input {
-    width: 90%;
-    font-size: 18px;
-    height: 30px;
 }

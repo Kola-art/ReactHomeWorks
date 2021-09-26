@@ -1,0 +1,12 @@
+.creatorBtn { 
+    /* margin-top: 10px; */
+    background-color:seagreen;
+    color: rgb(238, 174, 55);
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    width: 200px;
+}

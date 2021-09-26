@@ -4,11 +4,25 @@
     background-color: aqua;
     padding: 15px;
     width: 200px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+.userCard img {
+    width: 40%;
+    margin-bottom: 10px;
 }
 .userList {
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
+    padding: 20px;
     display: flex;
     flex-wrap: wrap;
+}
+.userTitle {
+    color: gold;
+}
+.menuInfo {
+    color:rgb(21, 26, 66);
 }
