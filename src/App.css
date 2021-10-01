@@ -1,7 +1,41 @@
 .App {
+  padding-top: 10px;
   text-align: center;
 }
-
+.App h1 {
+  margin-bottom: 30px;
+  color:rgb(116, 66, 19);
+}
+.timeTable {
+  color: goldenrod;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.timeControls {
+  display: flex;
+  width: 250px;
+  margin: 0 auto 10px auto;
+  justify-content: space-between;
+}
+.timebtn {
+  width: 70px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 10px;
+  color: rgb(255 208 91);
+}
+.red {
+  background-color: rgb(228, 10, 10);
+}
+.green {
+  background-color: green;
+}
+.gray {
+  background-color: gray;
+}
+.list {
+  margin: 5px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
