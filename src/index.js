@@ -3,10 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { TaskProvider } from './Context/taskContext';
+import {taskReducer, initialState} from './Reducer/TaskReducer';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <TaskProvider reducer={taskReducer} initialState={initialState}>
+      <App />
+    </TaskProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
