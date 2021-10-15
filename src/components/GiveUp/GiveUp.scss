@@ -1,0 +1,15 @@
+.giveUpBtn {
+    width: 150px;
+    cursor: pointer;
+    height: 30px;
+    border: none;
+    margin-left: 50px;
+    &:hover {
+        background-color: red;
+    }
+}
+
+.giveUp {
+    margin: 40px auto 0;
+    text-align: center;
+}
