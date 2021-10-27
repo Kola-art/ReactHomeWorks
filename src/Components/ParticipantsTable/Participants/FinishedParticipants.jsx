@@ -25,12 +25,11 @@ function Participants({event}) {
   const delParticipant = (eventId, participantId ) => {
     dispatch(deleteParticipant(eventId, participantId));
   };
-  const participantsArr = competition[0].status ? competition[0].participants : competition[0].filteredParticipants;
-  
+  console.log(competition);
   return (
     <Grid container spacing={2} >
       {
-        participantsArr.map(participant => {
+        competition[0].participants.map(participant => {
           return (
             <Grid item xs={4} key={participant.id}>
               <Item>

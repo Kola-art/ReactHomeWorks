@@ -1,8 +1,7 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import WinnerTitle from './WinnerTitle';
-import WinnerInfo from './WinnerInfo';
 import Box from '@mui/material/Box';
+import PropTypes from 'prop-types';
 
 const styles = {
   marginTop: '30px',
@@ -12,13 +11,14 @@ const styles = {
   fontWeight: 700
 };
 
-function Winner() {
-  const showWinner = useSelector(state => state.showWinner);
+function Winner({event}) {
   return (
     <Box sx={styles}>
-      {showWinner ? <WinnerInfo /> : <WinnerTitle /> }
+      <WinnerTitle event={event} />
     </Box>
   );
 }
-
+Winner.propTypes = {
+  event: PropTypes.array, 
+};
 export default Winner;

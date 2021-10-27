@@ -13,7 +13,7 @@ export function ButtonCreator({onClick, children, bg, type, view, size, disabled
   );
 }
 ButtonCreator.propTypes = {
-  children: PropTypes.string, 
+  children: PropTypes.any, 
   onClick: PropTypes.func,
   bg:  PropTypes.string, 
   type: PropTypes.string,

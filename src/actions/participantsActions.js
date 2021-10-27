@@ -1,36 +1,45 @@
 export const ADD_PARTICIPANT = 'add participant';
-export const SET_PARTICIPANT = 'set participant';
 export const FETCH_PARTICIPANTS = 'fetch participant';
 export const FETCH_PARTICIPANT_SUCCESS = 'fetch participant success';
 export const DELETE_PARTICIPANT = 'delete participant';
 export const FILTER_PARTICIPANTS = 'filter participant';
+export const FILTER_EVENTS = 'filter events';
 export const WINNER = 'winner';
+export const CREATE_COMPETITION = 'create competition';
 
-export const addParticipant = (name, time) => ({
-  type: ADD_PARTICIPANT,
-  payload: {...name, ...time} 
-});
+export const addParticipant = (name, time, eventId) => {
+  const data = {...name, ...time};
+  return {type: ADD_PARTICIPANT, payload: {data, eventId } };
+};
 
-export const fetchParticipantSuccess = (participants) => ({
+export const fetchParticipantSuccess = (events) => ({
   type: FETCH_PARTICIPANT_SUCCESS,
-  payload: participants
+  payload: events
 });
 
-export const setParticipant = (participants) => ({
-  type: SET_PARTICIPANT,
-  payload: participants
-});
-
-export const deleteParticipant = (id) => ({
+export const deleteParticipant = (eventId, participantId) => ({
   type: DELETE_PARTICIPANT,
-  payload: id
+  payload: {eventId, participantId}
 });
 
-export const filterParticipant = (text) => ({
+export const filterParticipant = (text, eventId) => ({
   type: FILTER_PARTICIPANTS,
+  payload: {text, eventId}
+});
+
+export const winnerAction = (eventId) => ({
+  type: WINNER,
+  payload: eventId
+});
+
+export const filterEvents = (text) => ({
+  type: FILTER_EVENTS,
   payload: text
 });
 
-export const winnerAction = () => ({
-  type: WINNER
-});
+export const createCompetition = (data) => {
+  return{
+    type: CREATE_COMPETITION,
+    payload: data
+  };
+};

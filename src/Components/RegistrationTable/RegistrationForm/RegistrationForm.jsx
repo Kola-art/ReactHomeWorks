@@ -3,9 +3,9 @@ import { Input, ButtonCreator, Form }  from '../../UI';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup'; 
 import { useForm } from 'react-hook-form';
+import { v4 } from 'uuid';
 import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
-import { v4 } from 'uuid';
 import RegistrationTimer from './RegistrationTimer';
 
 const styles = {

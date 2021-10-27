@@ -1,24 +1,36 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { Typography } from '@mui/material';
+import Box from '@mui/material/Box';
+import PropTypes from 'prop-types';
 
-function WinnerInfo(){
-  const { winner } = useSelector(state => state);
+const styles = {
+  box: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+};
+
+function WinnerInfo({event}){
+  
   return (
-    <>
-      <Typography component='h3' variant="h4" sx={{marginBottom: 3}}>
-        The Winner
+    <Box sx={styles.box} component='div'>
+      <Typography component='p' variant="p" sx={{marginBottom: 1}}>
+        ID: {event[0].id}
       </Typography>
-      <Typography component='h3' variant="h5" sx={{marginBottom: 2}}>
-        ID: {winner.id}
+      <Typography component='p' variant="p" sx={{marginBottom: 1}}>
+        NAME: {event[0].name}
       </Typography>
-      <Typography component='h3' variant="h5" sx={{marginBottom: 2}}>
-        NAME: {winner.firstName}
+      <Typography component='p' variant="p" sx={{marginBottom: 1}}>
+        WINNER: {event[0].winner.firstName} {event[0].winner.secondName}
       </Typography>
-      <Typography component='h3' variant="h5" sx={{marginBottom: 2}}>
-        TIME: {winner.pastTime}
+      <Typography component='p' variant="p" sx={{marginBottom: 1}}>
+        TIME:  {event[0].winner.pastTime}
       </Typography>
-    </>
+    </Box>
   );
 }
+
+WinnerInfo.propTypes = {
+  event: PropTypes.array, 
+};
 export default WinnerInfo;

@@ -3,8 +3,8 @@ import { getParticipants } from '../api/index';
 
 export const fetchParticipants = () => {
   return async (dispatch) => {
-    let participants = await Promise.resolve(getParticipants());
-    let participantArr = participants.data.map(participant => participant);
-    dispatch(fetchParticipantSuccess(participantArr));
+    let events = await Promise.resolve(getParticipants());
+    let eventsArr = events.data.map(event => event);
+    dispatch(fetchParticipantSuccess(eventsArr));
   };
 };

@@ -7,12 +7,12 @@ import PropTypes from 'prop-types';
 import cancelSound from '../../../assets/sound/cancel.mp3';
 import apply from '../../../assets/sound/apply.mp3';
 import { soundPlay } from '../../../assets/sound';
-
 import { recoverState } from '../../../utils';
+import { useParams } from 'react-router-dom';
 
 function Saver({isGoing, setIsGoing, setTime, time, setName, name }) {
   const dispatch = useDispatch();
-   
+  const { competitionId } = useParams();
   const cancel = () => {
     const src = cancelSound;
     soundPlay(src);
@@ -23,7 +23,7 @@ function Saver({isGoing, setIsGoing, setTime, time, setName, name }) {
     if(time.pastTime === '00 : 00 : 00'){
       return;
     }
-    dispatch(addParticipant(name, time));
+    dispatch(addParticipant(name, time, competitionId));
     const src = apply;
     soundPlay(src);
     recoverState(time, setTime, setName, name, setIsGoing, isGoing );

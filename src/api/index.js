@@ -7,5 +7,5 @@ const api = axios.create({
 });
 
 export function getParticipants(){
-  return api.get('/users');
+  return api.get('/events');
 }
